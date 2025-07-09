@@ -42,6 +42,7 @@ RUN apt update && \
 ADD . /misago
 WORKDIR /misago
 
+RUN mkdir -p /root/.pip
 RUN <<EOF cat > /root/.pip/pip.conf
 [global]
 index-url = https://mirrors.tencent.com/pypi/simple
