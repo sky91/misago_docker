@@ -6,6 +6,9 @@ services:
   nginx-lets-encrypt: !reset null
 
   misago:
+    build:
+      context: misago
+      dockerfile: misago/tencent-cloud.Dockerfile
     depends_on: !override
       - postgres-15
       - redis-6
