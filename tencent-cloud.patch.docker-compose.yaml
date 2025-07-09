@@ -17,3 +17,4 @@ services:
     build:
       context: misago
       dockerfile: tencent-cloud.Dockerfile
+

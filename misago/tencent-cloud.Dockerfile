@@ -7,13 +7,20 @@ ENV MISAGO_PLUGINS "/misago/plugins"
 
 RUN <<EOF cat > /etc/apt/sources.list
 deb http://mirrors.tencent.com/debian bullseye main contrib non-free
+deb-src http://mirrors.tencent.com/debian bullseye main contrib non-free
 deb http://mirrors.tencent.com/debian bullseye-updates main contrib non-free
+deb-src http://mirrors.tencent.com/debian bullseye-updates main contrib non-free
 deb http://mirrors.tencent.com/debian-security bullseye-security main contrib non-free
+deb-src http://mirrors.tencent.com/debian-security bullseye-security main contrib non-free
+deb http://mirrors.tencent.com/debian bullseye-backports main contrib non-free
+deb-src http://mirrors.tencent.com/debian bullseye-backports main contrib non-free
+deb http://mirrors.tencent.com/debian bullseye-proposed-updates main contrib non-free
+deb-src http://mirrors.tencent.com/debian bullseye-proposed-updates main contrib non-free
 EOF
 
 # Install dependencies in one single command/layer
-RUN apt-get update && \
-    apt-get install -y --allow-unauthenticated \
+RUN apt update && \
+    apt install -y --allow-unauthenticated \
       vim \
       libffi-dev \
       libssl-dev \
@@ -23,7 +30,7 @@ RUN apt-get update && \
       cron \
       postgresql-client-15 \
       gettext && \
-    apt-get clean
+    apt clean
 
 # Make current directory available as "Misago" within docker
 ADD . /misago
