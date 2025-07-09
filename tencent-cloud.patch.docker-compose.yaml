@@ -1,0 +1,8 @@
+version: "3.8"
+
+services:
+  nginx-proxy:
+    ports: !override
+      - "9000:80"
+
+  nginx-lets-encrypt: !reset null
