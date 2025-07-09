@@ -6,3 +6,8 @@ services:
       - "9000:80"
 
   nginx-lets-encrypt: !reset null
+
+  celery-worker:
+    build:
+      context: misago
+      dockerfile: misago/tencent-cloud.Dockerfile
