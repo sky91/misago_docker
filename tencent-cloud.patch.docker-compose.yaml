@@ -8,7 +8,7 @@ services:
   misago:
     build:
       context: misago
-      dockerfile: misago/tencent-cloud.Dockerfile
+      dockerfile: tencent-cloud.Dockerfile
     depends_on: !override
       - postgres-15
       - redis-6
@@ -16,4 +16,4 @@ services:
   celery-worker:
     build:
       context: misago
-      dockerfile: misago/tencent-cloud.Dockerfile
+      dockerfile: tencent-cloud.Dockerfile
