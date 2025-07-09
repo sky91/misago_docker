@@ -42,12 +42,12 @@ RUN apt update && \
 ADD . /misago
 WORKDIR /misago
 
-RUN mkdir -p /root/.pip
-RUN <<EOF cat > /root/.pip/pip.conf
-[global]
-index-url = https://mirrors.tencent.com/pypi/simple
-trusted-host = mirrors.cloud.tencent.com
-EOF
+#RUN mkdir -p /root/.pip
+#RUN <<EOF cat > /root/.pip/pip.conf
+#[global]
+#index-url = https://mirrors.tencent.com/pypi/simple
+#trusted-host = mirrors.cloud.tencent.com
+#EOF
 
 # Install requirements files
 RUN pip install --upgrade pip && \
